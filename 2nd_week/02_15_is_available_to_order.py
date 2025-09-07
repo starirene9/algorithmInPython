@@ -1,6 +1,13 @@
-finding_target = 2
-finding_numbers = [0, 3, 5, 6, 1, 2, 4]
-# 무작위 배열에서는 이진탐색을 찾을 수 없음 -> 정렬을 진행해야 함
+shop_menus = ["만두", "떡볶이", "오뎅", "사이다", "콜라"]
+shop_orders = ["오뎅", "콜라", "만두"]
+
+
+def is_available_to_order(menus, orders):
+    menus.sort() #정렬 먼저
+    for order in orders:
+        if not is_exist_target_number_binary(order, menus):
+            return False
+    return True
 
 def is_exist_target_number_binary(target, array):
     cur_min_num = 0
@@ -17,6 +24,5 @@ def is_exist_target_number_binary(target, array):
         cur_guess_num = (cur_min_num + cur_max_num) // 2
     return False
 
-
-result = is_exist_target_number_binary(finding_target, finding_numbers)
+result = is_available_to_order(shop_menus, shop_orders)
 print(result)

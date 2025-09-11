@@ -1,6 +1,16 @@
 input = [4, 6, 2, 9, 1]
 
+# def selection_sort(array):
+#     n = len(array)
+#     for i in range(n - 1):
+#         min_index = i
+#         for j in range(i, n):   # i부터 끝까지 직접 탐색
+#             if array[j] < array[min_index]:
+#                 min_index = j
+#         array[i], array[min_index] = array[min_index], array[i]
+#     return array
 
+# i + j로 바꿔서 실제 배열 인덱스를 맞추는 것
 def selection_sort(array):
     n = len(array)
     for i in range(n - 1):
@@ -9,7 +19,7 @@ def selection_sort(array):
             if array[i + j] < array[min_index]:
                 min_index = i + j
         array[i], array[min_index] = array[min_index], array[i]
-    return
+    return array
 
 
 selection_sort(input)

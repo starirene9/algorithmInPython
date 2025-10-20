@@ -19,8 +19,10 @@ def get_minimum_count_of_overseas_supply(stock, dates, supplies, k):
     while stock <= k:
         while last_added_date_index < len(dates) and dates[last_added_date_index] <= stock:
             heapq.heappush(max_heap, supplies[last_added_date_index] * -1)
+            # 음수로 저장해야함
             last_added_date_index += 1
         supply =  heapq.heappop(max_heap) * -1
+        #  양수로 다시 전환
         stock += supply
         answer += 1
 

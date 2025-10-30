@@ -30,6 +30,7 @@ def catch_me(cony_loc, brown_loc):
             current_position, current_time = queue.popleft()
 
             new_time = current_time + 1
+
             new_position = current_position - 1
             if 0 <= new_position <= 200000:
                 visited[new_position][new_time] = True # 위치 중심으로 새로운 시간의 키값일때 true 값을 설정
